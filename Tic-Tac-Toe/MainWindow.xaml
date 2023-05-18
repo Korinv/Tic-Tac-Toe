@@ -1,0 +1,83 @@
+﻿<Window x:Class="Tic_Tac_Toe.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tic_Tac_Toe"
+        mc:Ignorable="d"
+        Title="Tic-Tac-Toe" Height="980" Width="1500" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>            
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="300"/>            
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" Grid.Column="5" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Tic-Tac-Toe" FontSize="100" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="Turn" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="Player ✕ turn" FontSize="60" Visibility="Hidden" HorizontalAlignment="Center"/>
+            
+            <Button x:Name="PvPButton" Grid.Row="4" Grid.Column="0" Content="Player vs Player" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="PvPButton_Click" />
+            <Button x:Name="PvCButton" Grid.Row="4" Grid.Column="1" Content="Player vs Computer" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="PvCButton_Click" />
+            
+            <Button x:Name="XButton" Grid.Row="4" Grid.Column="0" Content="Player ✕" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="XButton_Click" />
+            <Button x:Name="OButton" Grid.Row="4" Grid.Column="1" Content="Player ◯" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="OButton_Click"  />
+            
+            <Button x:Name="PSButton" Grid.Row="4" Grid.Column="0" Content="Player Starts" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="PSButton_Click"/>
+            <Button x:Name="CSButton" Grid.Row="4" Grid.Column="1" Content="Computer Starts" FontSize="25" Margin="5" Padding="5" Visibility="Hidden" Click="CSButton_Click"/>
+
+            <Button x:Name="NewGameButton" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="New Game" FontSize="70" Margin="5" Padding="5" Click="NewGameButton_Click" />         
+        </Grid>
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="1" Grid.Column="2" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="1" Grid.Column="3" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="2" Grid.Column="2" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="2" Grid.Column="3" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="3" Grid.Column="2" BorderThickness="2" BorderBrush="Black"/>
+        <Border Grid.Row="3" Grid.Column="3" BorderThickness="2" BorderBrush="Black"/>
+
+        <Button x:Name="Window1Button" Grid.Row="1" Grid.Column="1" IsEnabled="False" Background="White" Click="Window1Button_Click"/>
+        <Button x:Name="Window2Button" Grid.Row="1" Grid.Column="2" IsEnabled="False" Background="White" Click="Window2Button_Click"/>
+        <Button x:Name="Window3Button" Grid.Row="1" Grid.Column="3" IsEnabled="False" Background="White" Click="Window3Button_Click"/>
+        <Button x:Name="Window4Button" Grid.Row="2" Grid.Column="1" IsEnabled="False" Background="White" Click="Window4Button_Click"/>
+        <Button x:Name="Window5Button" Grid.Row="2" Grid.Column="2" IsEnabled="False" Background="White" Click="Window5Button_Click"/>
+        <Button x:Name="Window6Button" Grid.Row="2" Grid.Column="3" IsEnabled="False" Background="White" Click="Window6Button_Click"/>
+        <Button x:Name="Window7Button" Grid.Row="3" Grid.Column="1" IsEnabled="False" Background="White" Click="Window7Button_Click"/>
+        <Button x:Name="Window8Button" Grid.Row="3" Grid.Column="2" IsEnabled="False" Background="White" Click="Window8Button_Click"/>
+        <Button x:Name="Window9Button" Grid.Row="3" Grid.Column="3" IsEnabled="False" Background="White" Click="Window9Button_Click"/>
+
+        <TextBlock x:Name="Window1" Grid.Row="1" Grid.Column="1" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window2" Grid.Row="1" Grid.Column="2" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window3" Grid.Row="1" Grid.Column="3" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window4" Grid.Row="2" Grid.Column="1" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window5" Grid.Row="2" Grid.Column="2" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/> 
+        <TextBlock x:Name="Window6" Grid.Row="2" Grid.Column="3" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window7" Grid.Row="3" Grid.Column="1" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window8" Grid.Row="3" Grid.Column="2" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="Window9" Grid.Row="3" Grid.Column="3" FontSize="200" Text="" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
